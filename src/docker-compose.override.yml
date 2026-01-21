@@ -1,6 +1,8 @@
+name: eshop-backing-services
 services:
   eshopdb:
     container_name: eshopdb
+    image: postgres:latest
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -10,4 +12,6 @@ services:
       - "5432:5432"
     volumes:
       - postgres_eshopdb:/var/lib/postgresql
-  
+
+volumes:
+  postgres_eshopdb:
