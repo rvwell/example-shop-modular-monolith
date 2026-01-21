@@ -6,11 +6,21 @@ namespace Catalog;
 
 public static class CatalogModule
 {
-    public static IServiceCollection AddCatalogModule(this IServiceCollection service, IConfiguration configuration)
+    public static IServiceCollection AddCatalogModule(this IServiceCollection services, IConfiguration configuration)
     {
+        //Add services
         
+        // Api Endpoints
         
-        return service;
+        // Application services
+        
+        // Data - Infrastructure
+        var connectionString = configuration.GetConnectionString("Database");
+
+        services.AddDbContext<CatalogDbContext>(options =>
+            options.UseNpgsql(connectionString));
+        
+        return services;
     }
     
     public static IApplicationBuilder UseCatalogModule(this IApplicationBuilder app)
