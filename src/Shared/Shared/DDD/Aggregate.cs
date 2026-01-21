@@ -11,7 +11,7 @@ public abstract class Aggregate<TId> : Entity<TId>, IAggregate<TId>
         _domainEvents.Add(domainEvent);
     }
     
-    public IDomainEvent[] clearDomainEvents()
+    public IDomainEvent[] ClearDomainEvents()
     {
         var events = _domainEvents.ToArray();
         _domainEvents.Clear();
