@@ -1,3 +1,3 @@
 ﻿namespace Catalog.Products.Events;
 
-public record ProductPriceChangeEvent(Product product) : IDomainEvent;
+public record ProductPriceChangedEvent(Product product) : IDomainEvent;
