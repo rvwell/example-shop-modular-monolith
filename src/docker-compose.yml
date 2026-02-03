@@ -3,6 +3,10 @@ name: EshopCompose
 services:
   eshopdb:
     image: postgres:latest
+  
+  seq:
+    image: datalust/seq:latest
+    
 
 volumes:
   postgres_eshopdb:
